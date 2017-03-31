@@ -3,8 +3,10 @@ import sys
 import os
 import sites.mgtv
 
-
+"""write your code for test
+"""
 if __name__ == "__main__":
-    sys.path.append(os.path.dirname(sys.path[0]))
-    print(mgtv.get_vid_from_url('http://www.hunantv.com/v/2/309238/f/3761306.html'))
+    mgtv_test = sites.mgtv.MGTV()
+    print(mgtv_test.for_test(orig_url='http://www.hunantv.com/v/2/309238/f/3761306.html'))
+
 

@@ -6,7 +6,8 @@ import json
 class MGTV:
     stream_type = [{'video_profile': '标清', 'id': 1},
                    {'video_profile': '高清', 'id': 2},
-                   {'video_profile': '超清', 'id': 3}]
+                   {'video_profile': '超清', 'id': 3},
+                   {'video_profile': '蓝光', 'id': 4}]
 
     id_dic = {i['video_profile']: (i['id']) for i in stream_type}
 
@@ -57,21 +58,21 @@ class MGTV:
 
         result['file'] = []
         for stream in info['data']['stream']:
-            result['file'].append({str(self.id_dic[stream['name']])+':'+stream['url']})
-            index += index
+            if stream['url'] != "":
+                result['file'].append({str(self.id_dic[stream['name']])+':'+stream['url']})
+                index += index
         result['msg'] = 'success'
         return result
 
-if __name__ == "__main__":
-    mgtv = MGTV()
-    orig_url = "http://www.hunssssantv.com/v/2/48128/f/580186.html"
-    url = mgtv.get_mgtv_real_url(orig_url)
-    vid = mgtv.get_vid_from_url(url)
-    if vid is None:
-        print("vid not found")
-    html = mgtv.get_info_by_vid(vid)
+    def for_test(self, orig_url):
+        url = self.get_mgtv_real_url(orig_url)
+        vid = self.get_vid_from_url(url)
+        if vid is None:
+            print("vid not found")
+        html = self.get_info_by_vid(vid)
+        print(html)
 
-    print(html)
+
 
 
 

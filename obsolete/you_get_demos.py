@@ -69,5 +69,4 @@ def video_info(vid,**kwargs):
 
 if __name__ == "__main__":
     ext, urls = video_info(28404897)
-    data = "b'vc_01'adfsadfas"
-    print(data[5:])
+    print(urls)
