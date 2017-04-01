@@ -2,6 +2,7 @@
 import common
 import json
 import base64
+import sys
 
 
 class Acfun:
@@ -109,5 +110,5 @@ class Acfun:
         return self.streams
 if __name__ == "__main__":
     acfun = Acfun()
-    item = acfun.get_info("http://www.acfun.tv/v/ac=2629641")
+    item = acfun.get_info("http://www.acfun.tv/v/ac3011409")
     print(acfun.get_urls(item, 'default'))
