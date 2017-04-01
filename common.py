@@ -16,6 +16,7 @@ fake_headers = {
 
 cookies = None
 
+
 def match_re(text, *patterns):
     """ Scans through a string for substring matched some patterns (first-subgroups only)
     :param text: A string to be scanned
